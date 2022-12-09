@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>CodePen - Contador para Navidad o Año Nuevo </title>
   <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 
 </head>
 
@@ -98,12 +99,21 @@
         "Pon tu corazón, mente y alma incluso en los actos más pequeños. Ese es el secreto del éxito - Swami Sivananda                                              "
       ]
 
-    
-      var x = Math.floor(Math.random()*74);
 
-      document.getElementById("mjs-navidad").innerHTML = mjs[x]; 
+      var x = Math.floor(Math.random() * 74);
+
+      document.getElementById("mjs-navidad").innerHTML = mjs[x];
+
+      var sound = new Howl({
+        src: ['https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'],
+        volume: 1.0,
+        onend: function () {
+          alert('We finished with the setup!');
+        }
+      });
+      sound.play();
     })
-  </script> 
+  </script>
 
 
   <body>
