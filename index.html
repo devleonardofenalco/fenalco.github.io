@@ -104,32 +104,24 @@
 
       document.getElementById("mjs-navidad").innerHTML = mjs[x];
 
-      var sound = new Howl({
-        src: ['locos.mpeg'],
-        volume: 1.0,
-        onend: function () {
-          alert('We finished with the setup!');
-        }
-      });
 
-
-      sound.once('load', function () {
-        sound.play();
-      });
-
-      document.body.addEventListener("click", function (evt) {
-        sound.play();
-        alert("body clicked");  
-      });
-
-       alert("btn3"); 
-      document.getElementById('btn2').onclick=function(){sound.play()}
-      document.getElementById('btn2').click 
     })
+
+    
   </script>
 
 
   <body>
+
+ 
+    <audio id="player" controls autoplay loop>
+
+      <source src="locos.mpeg" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+
+
     <div class="middle">
       <img src="logo-fenalco-valle.png" alt="Girl in a jacket">
       <h1 class="label" id="mjs-navidad">Felíz Navidad y Próspero Año Nuevo
@@ -153,7 +145,7 @@
         </span>
       </div>
     </div>
-    <button id="btn2">Play</button>
+
   </body>
   <!-- partial -->
   <script src="./script.js"></script>
