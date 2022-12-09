@@ -105,18 +105,23 @@
       document.getElementById("mjs-navidad").innerHTML = mjs[x];
 
       var sound = new Howl({
-        src: ['locos.mpeg'],  
+        src: ['locos.mpeg'],
         volume: 1.0,
         onend: function () {
           alert('We finished with the setup!');
-        } 
+        }
       });
 
 
-      sound.once('load', function(){
-        sound.play();  
+      sound.once('load', function () {
+        sound.play();
       });
-      
+
+      document.body.addEventListener("click", function (evt) {
+        sound.play();
+        alert("body clicked");  
+      });
+
     })
   </script>
 
